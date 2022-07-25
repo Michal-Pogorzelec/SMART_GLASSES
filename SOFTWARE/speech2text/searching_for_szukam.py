@@ -1,3 +1,5 @@
+import time
+
 def kmp_table(w):
 
     pos = 1
@@ -23,7 +25,7 @@ def kmp_table(w):
     return T
 
 
-def kmp_search(S, frag='szukam'):
+def kmp_search(S: str, frag: str='szukam') -> str:
 
     comp = 0
     m = 0 #(the position of the current character in S)
@@ -64,3 +66,26 @@ def kmp_search(S, frag='szukam'):
     word = ''.join(word)
 
     return word
+
+
+def search_fun(S: str) -> str:
+    words = S.split()
+    print(words)
+    for i, word in enumerate(words):
+        if word == "szukam":
+            try:
+                return words[i+1]
+            except IndexError as e:
+                print(e)
+
+
+if __name__ == "__main__":
+    start = time.perf_counter()
+    print(kmp_search("krążę właśnie po pokoju i szukam krzesła żeby usiąść"))
+    stop = time.perf_counter()
+    print(f"Czas: {stop-start}")
+    start2 = time.perf_counter()
+    print(search_fun("krążę właśnie po pokoju i szukam krzesła żeby usiąść"))
+    stop2 = time.perf_counter()
+    print(f"Czas2: {stop2-start2}")
+
