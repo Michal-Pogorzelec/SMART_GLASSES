@@ -81,11 +81,11 @@ def search_fun(S: str) -> str:
 
 if __name__ == "__main__":
     start = time.perf_counter()
-    print(kmp_search("krążę właśnie po pokoju i szukam krzesła żeby usiąść"))
+    print(kmp_search(f"krążę właśnie po pokoju i szukam krzesła żeby usiąść"))
     stop = time.perf_counter()
-    print(f"Czas: {stop-start}")
+    print(f"Czas: {round((stop-start), 6)}")
     start2 = time.perf_counter()
-    print(search_fun("krążę właśnie po pokoju i szukam krzesła żeby usiąść"))
+    print(search_fun(f"krążę właśnie po pokoju i szukam krzesła żeby usiąść"))
     stop2 = time.perf_counter()
-    print(f"Czas2: {stop2-start2}")
+    print(f"Czas2: {round((stop2-start2), 6)}")
 
